@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="runtime">
+  <id>com.redhat.Platform</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license>https://www.redhat.com/en/about/red-hat-end-user-license-agreements#rhel</project_license>
+  <name>Red Hat Platform</name>
+  <summary>Shared libraries</summary>
+  <releases>
+    <release version="9" date="2021-06-29"/>
+  </releases>
+  <description>
+    <p>
+      The Red Hat Platform is a runtime for Flatpak applications. It contains
+      common libraries that are shared between desktop applications, including
+      GTK 3, GStreamer, Mesa, and many others.
+    </p>
+  </description>
+  <url type="homepage">https://redhat.com/</url>
+</component>
