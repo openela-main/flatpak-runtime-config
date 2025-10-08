@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="runtime">
+  <id>com.redhat.Sdk</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license>https://www.redhat.com/en/about/red-hat-end-user-license-agreements#rhel</project_license>
+  <name>Red Hat SDK</name>
+  <summary>Tools and headers for developing applications</summary>
+  <releases>
+    <release version="9" date="2021-06-29"/>
+  </releases>
+  <description>
+    <p>
+      The Red Hat Sdk is the development runtime that you can use to produce applications using
+      the Red Hat Platform runtime. It contains everything that is in the platform, as well
+      as build and debugging tools and headers for the libraries.
+    </p>
+  </description>
+  <url type="homepage">https://redhat.com/</url>
+</component>

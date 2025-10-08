@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="runtime">
+  <id>org.centos.stream.Sdk</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>https://www.centos.org/legal/licensing-policy/</project_license>
+  <name>Centos Stream SDK</name>
+  <summary>Tools and headers for developing applications</summary>
+  <releases>
+    <release version="10" date="2024-06-08"/>
+  </releases>
+  <description>
+    <p>
+      The Centos Stream Sdk is the development runtime that you can use to produce applications
+      using the Centos Stream runtime. It contains everything that is in the platform, as well
+      as build and debugging tools and headers for the libraries.
+    </p>
+  </description>
+  <url type="homepage">https://www.centos.org/centos-stream/</url>
+</component>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="runtime">
+  <id>org.centos.stream.Platform</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>https://www.centos.org/legal/licensing-policy/</project_license>
+  <name>Centos Stream Platform</name>
+  <summary>Shared libraries</summary>
+  <releases>
+    <release version="10" date="2024-06-08"/>
+  </releases>
+  <description>
+    <p>
+      The Centos Stream Platform is a runtime for Flatpak applications.
+      It contains common libraries that are shared between desktop applications, including
+      GTK 3, GStreamer, Qt 5, Mesa, SDL2, and many others.
+    </p>
+  </description>
+  <url type="homepage">https://www.centos.org/centos-stream/</url>
+</component>
