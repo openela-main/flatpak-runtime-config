@@ -1,6 +1,6 @@
 Name:           flatpak-runtime-config
 Version:        34
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Configuration files that live inside the flatpak runtime
 Source1:        50-flatpak.conf
 Source2:        usercustomize.py
@@ -11,6 +11,8 @@ Source6:        05-flatpak-fontpath.conf
 
 License:        MIT
 
+BuildRequires:  python2
+BuildRequires:  python2-rpm-macros
 BuildRequires:  python3
 BuildRequires:  python3-rpm-macros
 
@@ -27,6 +29,8 @@ files that need to be different when executing a flatpak.
 %build
 
 %install
+export RHEL_ALLOW_PYTHON2_FOR_BUILD=1
+
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT%{_prefix}/cache/fontconfig
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/fonts/conf.d
@@ -34,7 +38,7 @@ install -t $RPM_BUILD_ROOT%{_sysconfdir}/fonts/conf.d -p -m 0644 %{SOURCE1}
 install -t $RPM_BUILD_ROOT%{_sysconfdir}/fonts/conf.d -p -m 0644 %{SOURCE6}
 
 # usercustomize.py to set up Python paths
-for d in %{python3_sitelib} ; do
+for d in %{python2_sitelib} %{python3_sitelib} ; do
     mkdir -p $RPM_BUILD_ROOT/$d
     install -t $RPM_BUILD_ROOT/$d -m 0644 %{SOURCE2}
 done
@@ -81,6 +85,7 @@ HOME=/root /usr/bin/fc-cache -s
 %files
 %dir %{_prefix}/cache
 %dir %{_prefix}/cache/fontconfig
+%{python2_sitelib}
 %{python3_sitelib}
 %{_datadir}/metainfo/*.appdata.xml
 %{_sysconfdir}/flatpak-builder/
@@ -88,6 +93,11 @@ HOME=/root /usr/bin/fc-cache -s
 %{_sysconfdir}/ld.so.conf.d/app.conf
 
 %changelog
+* Wed Oct 15 2025 Tomas Popela <tpopela@redhat.com> - 34-4
+- Re-enable the python2 support and fix various things that broke when I've
+  by mistake used RHEL 9 SRPM when importing into RHEL 8
+- Resolves: RHEL-121407
+
 * Fri Mar 24 2023 Tomas Popela <tpopela@redhat.com> - 34-3
 - Sync with Fedora
 - Add a seed for <dir prefix="xdg">fonts</dir> (by tagoh)
