@@ -4,7 +4,7 @@
 
 Name:           flatpak-runtime-config
 Version:        40
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Configuration files that live inside the flatpak runtime
 Source1:        50-flatpak.conf
 Source2:        sitecustomize.py
@@ -110,6 +110,10 @@ done
 %{_sysconfdir}/ld.so.conf.d/app.conf
 
 %changelog
+* Wed Oct 15 2025 Tomas Popela <tpoprls@redhat.com> - 40-5
+- Fix release date and version in the AppStream data
+  Resolves: RHEL-121458
+
 * Tue Oct 29 2024 Troy Dawson <tdawson@redhat.com> - 40-4
 - Bump release for October 2024 mass rebuild:
   Resolves: RHEL-64018
